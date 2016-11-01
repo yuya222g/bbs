@@ -1,2 +1,8 @@
-this is boards/index.html.
-<%= link_to("スレッド新規作成", "/boards/new") %>
+<h1>掲示板！</h1>
+                           <!--"/boards/new"-->
+<%= link_to("スレッド新規作成", new_board_path) %>
+<hr>
+<% @boards.each do |board| %>
+  <!--%= link_to(board.title, "/boards/#{board.id}") %> </br-->
+  <%= link_to(board.title, board_path(board)) %> </br>
+<% end %>
